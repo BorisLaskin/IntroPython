@@ -20,9 +20,9 @@ if number > 0:
 
 
     temp = min(list_2)
-    res = [i for i, j in enumerate(list_2) if j == temp]
+    res = [i for i, j in enumerate(list_2) if j == temp] #google в помощь https://translated.turbopages.org/proxy_u/en-ru.ru.55990016-64553520-92785d72-74722d776562/https/www.geeksforgeeks.org/python-find-the-index-of-minimum-element-in-list/
     
     # Printing result
-    print("The Positions of minimum element : " + str(res))
+    print(f"Самый близкий это элемент {list_1[res[0]]}")
 else:
     print("мало")
