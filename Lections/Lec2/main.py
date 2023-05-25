@@ -57,3 +57,5 @@ for (k,v) in dictionary.items():
     print(type((k,v)),type(v))
 
 print(dictionary.items()) #список кортежей
+
+print(type(dictionary))

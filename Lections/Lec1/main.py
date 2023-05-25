@@ -22,6 +22,8 @@
 a= 5.89996
 b = 1231.123123
 
+print(a+b)
+
 print(round(a,2))
 print(2>3)
 
