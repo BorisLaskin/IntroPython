@@ -7,7 +7,7 @@
 напишите “Парам пам-пам”, если с ритмом все в порядке и “Пам парам”, если с ритмом все не
 в порядке (пара-ра-рам рам-пам-папам па-ра-па-да)"""
 import numpy as np
-def checkfunc1(string,vowels):
+def checkfunc1(string,vowels):# Базовое решение
     fraze_list=[item.split('-') for item in string.lower().split()]
 
     if len(fraze_list)<=1:
@@ -21,14 +21,11 @@ def checkfunc1(string,vowels):
                 for j in range(len(fraze)):
                     res[i][j]+=fraze[j].count(item)
 
-                    # print(list(filter(lambda y: item in y, fraze)))
-                # string.count(item)    
         print("количество слогов в слове")
         print(res)
         res=list(map(lambda x: sum(x),res))
         print("количество слогов в фразе")
         print(res)
-            # res=list(map(lambda x: x+1, filter(lambda y: item in y, fraze_list)))
         return True if all(x == res[0] for x in res) else False
 
 def checkfunc2(string,vowels):
@@ -52,7 +49,6 @@ def checkfunc3(string,vowels):
     else:
         res = [0 for i in range(len(fraze_list))]
         for item in vowels[0]:
-
             arr=(list(map(lambda x: x.count(item),fraze_list)))
             res=[res[i]+arr[i] for i in range(len(arr))]
         print("количество слогов в фразе")
