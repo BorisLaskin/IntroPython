@@ -5,23 +5,26 @@
 # Нужно написать функцию RLE,
 # которая на выходе даст строку вида:
 # A4B3C2XYZD4E3F3A6B28
-def RLE(s_list):
+def rle(s_list):
     flag_list = [1 if s_list[i] == (s_list[i + 1]) else 0 for i in range(len(s_list) - 1)]
     counter2 = 1
-    string = s_list[0]
+    some_string = str()
     print(s_list)
     print(flag_list)
     for i in range(len(flag_list)):
-        if flag_list[i] == 1:
+        if flag_list[i]:
             counter2 += 1
         else:
-            string += (str(counter2) if counter2 != 1 else '') + s_list[i + 1]
+            some_string += s_list[i] + str(counter2) if counter2 != 1 else ''
             counter2 = 1
     else:
         if counter2 != 1:
-            string += str(counter2)
+            some_string += str(counter2)
+        else:
+            some_string += s_list[-1]
 
-    return string
+    return some_string
+
 
 string = 'AAAABBBCCXYZDDDDEEEFFFAAAAAABBBBBBBBBBBBBBBBBBBBBBBBBBBBC'
-print(RLE(string))
+print(rle(string))
